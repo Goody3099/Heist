@@ -10,7 +10,9 @@ namespace Heist
         {
             Console.WriteLine("Plan Your Heist!");
             List<TeamMember> listOfMembers = new List<TeamMember>();
-            int bankDiffLevel = 100;
+            Console.WriteLine("Pick a difficultly level for the bank. Pick a number between 90-110");
+            string bank = Console.ReadLine();
+            int bankDiffLevel = int.Parse(bank);
             while (true)
             {
                 Console.WriteLine("Enter a team member's name.");
@@ -38,6 +40,7 @@ namespace Heist
             string trialRuns = Console.ReadLine();
             int y = int.Parse(trialRuns);
             int x = 0;
+            int z = 0;
             Console.WriteLine($"Member Report - {sumOfMemberSkill}");
             while (x < y)
             {
@@ -46,6 +49,7 @@ namespace Heist
                 if (sumOfMemberSkill >= bankDiffLevel + heistLuck)
                 {
                     Console.WriteLine("Heist Successfull!");
+                    z++;
                 }
                 else
                 {
@@ -53,7 +57,7 @@ namespace Heist
                 }
                 x++;
             }
-
+            Console.WriteLine($"Your hesit was sucessfull {z} our of {trialRuns} times.");
         }
         static int randomLuck()
         {
